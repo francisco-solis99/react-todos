@@ -1,0 +1,19 @@
+
+
+.list-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.25em;
+  margin: .25em 0;
+}
+
+.list-item.done {
+  text-decoration: line-through;
+  color: salmon;
+}
+
+
+.Todo__button {
+  cursor: pointer;
+}

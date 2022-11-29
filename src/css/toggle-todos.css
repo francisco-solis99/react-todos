@@ -1,0 +1,17 @@
+.ToggleTodos__label {
+  /* display: flex;
+  align-items: center; */
+}
+
+.ToggleTodos__label span{
+  font-size: 0.75rem;
+}
+
+
+.list-item.no-visible {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
