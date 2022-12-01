@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 function Checkmark(props) {
 
   const handlerCheckTodo = (e) => {
-    props.onClickCheckmark(props.id)
+    props.onClickCheckmark(props.id, { done: !props.done })
   }
 
   return (
-    <span className={`checkmark ${props.done ? 'dimmed': ''}`} onClick={(e) => handlerCheckTodo(e)}>
-      <div className="checkmark_stem"/>
-      <div className="checkmark_kick"/>
+    <span className={`checkmark ${props.done ? 'dimmed' : ''}`} onClick={(e) => handlerCheckTodo(e)}>
+      <div className="checkmark_stem" />
+      <div className="checkmark_kick" />
     </span>
   )
 };

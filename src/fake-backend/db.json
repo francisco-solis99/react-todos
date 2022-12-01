@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Task1",
+      "done": false,
+      "visible": true
+    },
+    {
+      "id": 2,
+      "text": "Task2",
+      "done": false,
+      "visible": true
+    },
+    {
+      "id": 3,
+      "text": "Task3",
+      "done": false,
+      "visible": true
+    }
+  ]
+}

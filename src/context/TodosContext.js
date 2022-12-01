@@ -1,27 +1,35 @@
 import React, { useState, useEffect, createContext } from 'react';
+import { getTodosRequest, createTodoRequest, updateTodoRequest, deleteTodoRequest } from '../services/todos/todos';
 
-const initialTodos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
 
+
+// const initialTodos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
 export const TodosContext = createContext();
 
 export function TodosContextProvider(props) {
-
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    setTodos(initialTodos);
+    // setTodos(initialTodos);
+    getTodosRequest().then(dataTodos => {
+      setTodos(dataTodos);
+    });
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos])
+  // useEffect(() => {
+  //   // localStorage.setItem("todos", JSON.stringify(todos));
+  // }, [todos])
 
 
-  const changeDoneTodo = (todoId) => {
-    const newTodos = [...todos];
-    const indexTodo = newTodos.findIndex(todo => todo.id === todoId);
-    newTodos[indexTodo].done = !newTodos[indexTodo].done;
-    setTodos(newTodos);
+  const changeDoneTodo = (todoId, body) => {
+    updateTodoRequest(todoId, body)
+      .then(todoUpdated => {
+        const newTodos = [...todos];
+        const indexTodo = newTodos.findIndex(todo => todo.id === todoUpdated.id);
+        newTodos[indexTodo].done = !newTodos[indexTodo].done;
+        setTodos(newTodos);
+      })
+      .catch(e => console.log('Error', e));
   }
 
   const createTodo = ({ text, done }) => {
@@ -31,11 +39,17 @@ export function TodosContextProvider(props) {
       done,
       visible: true
     }
-    setTodos([...todos, newTodo]);
+    createTodoRequest(newTodo).then(newTodo => {
+      setTodos([...todos, newTodo]);
+    });
   }
 
   const deleteTodo = (idTodo) => {
-    setTodos(todos.filter(todo => todo.id !== idTodo));
+    deleteTodoRequest(idTodo)
+      .then(() => {
+        setTodos(todos.filter(todo => todo.id !== idTodo));
+      })
+      .catch(e => console.log('Error'));
   }
 
   const filterTodos = (filterName) => {
