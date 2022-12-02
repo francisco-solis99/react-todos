@@ -1,6 +1,6 @@
 .ToggleTodos__label {
-  /* display: flex;
-  align-items: center; */
+  display: flex;
+  align-items: center;
 }
 
 .ToggleTodos__label span{
@@ -8,10 +8,4 @@
 }
 
 
-.list-item.no-visible {
-  opacity: 0;
-  height: 0;
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
-}
+
