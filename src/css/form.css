@@ -6,9 +6,11 @@
 .Form__input {
   width: 100%;
   height: 100%;
-  padding: .5em .75em;
+  padding: .75em .75em;
   border: 0;
   outline: 0;
+  border-top-left-radius: 0.45em;
+  border-bottom-left-radius: 0.45em;
 }
 
 
@@ -19,4 +21,6 @@
   background-color: #0283C6;
   color: #fff;
   border: 0;
+  border-top-right-radius: 0.45em;
+  border-bottom-right-radius: 0.45em;
 }

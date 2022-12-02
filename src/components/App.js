@@ -12,11 +12,14 @@ const App = () => {
         <Header />
         <TodoList />
         <Form />
-        <div className='filter__options'>
-          <ToggleTodos filterBy='All' />
-          <ToggleTodos filterBy='Done' />
-          <ToggleTodos filterBy='Undone' />
-        </div>
+        <section className="filter">
+          <h3 className="filter__title">Filter your tasks</h3>
+          <div className='filter__options'>
+            <ToggleTodos filterBy='All' />
+            <ToggleTodos filterBy='Done' />
+            <ToggleTodos filterBy='Undone' />
+          </div>
+        </section>
       </div>
     </main>
   );
