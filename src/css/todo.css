@@ -1,11 +1,30 @@
 
 
 .list-item {
+  position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 0.25em;
   margin: .25em 0;
+  animation: slidein 200ms ease-in;
+  padding: 0.5em .25em;
+  transition: all ease-in 100ms;
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.list-item:hover {
+  background-color: #0283C6;
 }
 
 .list-item.done {
@@ -15,5 +34,37 @@
 
 
 .Todo__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  border-radius: .25em;
+}
+
+.Todo__button.delete {
+  background-color: rgb(225, 96, 81);
+  border: 0;
+}
+
+.list-item.no-visible {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item.to-delete {
+  animation: slideout 300ms ease-out forwards;
+}
+
+@keyframes slideout {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: 100px;
+  }
 }
