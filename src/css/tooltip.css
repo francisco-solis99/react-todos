@@ -1,0 +1,29 @@
+.ToolTip {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  width: 20%;
+  max-width: 400px;
+  min-width: 200px;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background-color: #1D2A3E;
+  transition: all ease-in 250ms;
+}
+
+.ToolTip.is-visible {
+  right: 0;
+}
+
+
+.ToolTip__icon {
+}
+
+.ToolTip__info {
+  margin-left: .75em;
+}
+
+.ToolTip__message {
+  margin: 0;
+}
