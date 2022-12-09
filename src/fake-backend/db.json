@@ -4,7 +4,11 @@
       "id": 1,
       "text": "Task1",
       "done": false,
-      "visible": true
+      "visible": true,
+      "details": [
+        "D1",
+        "D2"
+      ]
     },
     {
       "id": 2,
@@ -13,8 +17,8 @@
       "visible": true
     },
     {
-      "id": "050164a5-5349-460d-b7c8-f804c97af21c",
-      "text": "dsa",
+      "id": "4a121b81-7cc4-4963-b035-66b5eff2c0cc",
+      "text": "asdasd",
       "done": true,
       "visible": true
     }

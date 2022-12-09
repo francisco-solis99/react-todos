@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import { TodosContext } from '../context/TodosContext';
 import Checkmark from './Checkmark';
 import PropTypes from 'prop-types';
@@ -20,7 +22,7 @@ function Todo({ todo }) {
 
   return (
     <li className={`list-item  ${done ? 'done' : ''} ${!visible ? 'no-visible' : ''}`}>
-      <span>{text}</span>
+      <Link className="list-item__link" to={`/details/${id}`}>{text}</Link>
       <Checkmark done={done} id={id} onClickCheckmark={changeDoneTodo} />
       <button className="Todo__button delete" onClick={(e) => handlerDeleteTodo(e)}>
         <MdDelete />

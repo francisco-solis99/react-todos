@@ -10,7 +10,7 @@ function Checkmark(props) {
   }
 
   return (
-    <span className={`checkmark ${props.done ? 'dimmed' : ''}`} onClick={(e) => handlerCheckTodo(e)}>
+    <span data-testid="checkmark" className={`checkmark ${props.done ? 'dimmed' : ''}`} onClick={(e) => handlerCheckTodo(e)}>
       <div className="checkmark_stem" />
       <div className="checkmark_kick" />
     </span>
