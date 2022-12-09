@@ -5,7 +5,7 @@ import App from './components/App';
 import { TodosContextProvider } from './context/TodosContext';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './css/index.css';
+// import './css/index.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TodosContext } from '../context/TodosContext';
-import '../css/toggle-todos.css';
+// import '../css/toggle-todos.css';
 
 function ToggleTodos({ filterBy }) {
 

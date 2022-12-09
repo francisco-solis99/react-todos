@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/checkmark.css';
+// import '../css/checkmark.css';
 import PropTypes from 'prop-types';
 
 

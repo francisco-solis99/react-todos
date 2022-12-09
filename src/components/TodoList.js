@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { TodosContext } from '../context/TodosContext';
 import Todo from './Todo';
-import '../css/todo-list.css';
+// import '../css/todo-list.css';
+
+import List from '@mui/material/List';
 
 
 
@@ -13,7 +15,7 @@ function TodoList() {
   if (todos.every(todo => !todo.visible)) return <p className="message__default"> No tasks in that state</p>
 
   return (
-    <ul className="list-wrapper">
+    <List className="list-wrapper">
       {
         todos.map(todo =>
           <Todo
@@ -21,7 +23,7 @@ function TodoList() {
             key={todo.id}
           />)
       }
-    </ul>
+    </List>
   )
 };
 
